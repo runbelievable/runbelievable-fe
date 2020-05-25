@@ -1,11 +1,11 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-
 import Homepage from './components/Homepage';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Buddies from './components/Buddies';
+import User from './components/User';
 
 const instructions = Platform.select({
   ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,
@@ -20,6 +20,7 @@ export default function App() {
     <Stack.Navigator initialRouteName="Homepage">
       <Stack.Screen name="Homepage" component={Homepage} />
       <Stack.Screen name="Buddies" component={Buddies} />
+      <Stack.Screen name="User" component={User} />
     </Stack.Navigator>
   </NavigationContainer>
 

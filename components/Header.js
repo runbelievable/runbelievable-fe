@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { StyleSheet, Text, Button, View } from 'react-native';
-// import CustomButton from './CustomButton';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function Header() {
+export default function Header({navigation}) {
   return (
     <View style={styles.navigationContainer}>
       <Button titleStyle={{fontSize: 500}}
@@ -14,6 +15,7 @@ export default function Header() {
       title='Profile'
       color='white'
       accesibilityLabel='view your profile'
+      onPress={() => navigation.navigate('User')}
       />
       <Button style={styles.navButton}
       title='Chat'

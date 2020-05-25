@@ -43,10 +43,10 @@ function Runner({ title, pace, location }) {
   );
 }
 
-export default function Buddies() {
+export default function Buddies({navigation}) {
   return (
       <SafeAreaView style={styles.container}>
-        <Header />
+        <Header navigation={navigation}/>
         <FlatList
           data={BUDDIESDATA}
           renderItem={({ item }) => <Runner title={item.title} pace={item.pace}
