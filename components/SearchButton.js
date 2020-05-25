@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { TouchableOpacity, StyleSheet, Text, View } from 'react-native';
 
-const CustomButton = props => {
+const SearchButton = props => {
   return(
     <TouchableOpacity onPress={props.onPress}>
       <View style={{...styles.button, ...props.style}}>
@@ -15,9 +15,11 @@ const CustomButton = props => {
 
 const styles = StyleSheet.create({
   button:{
+    alignSelf: 'center',
     backgroundColor: 'darkorange',
-    paddingVertical: 10,
-    width: 100,
+    marginTop: 30,
+    paddingVertical: 15,
+    width: 250,
     borderRadius: 15,
   },
   buttonText:{
@@ -27,4 +29,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default CustomButton;
+export default SearchButton;

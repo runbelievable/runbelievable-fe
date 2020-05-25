@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, Text, View, Image, Button } from 'react-native';
-import CustomButton from './CustomButton';
-
+import SearchButton from './SearchButton';
 
 export default function Homepage() {
   return (
@@ -9,7 +8,8 @@ export default function Homepage() {
       <Text style={styles.title}>Runbelievable</Text>
       <Image source={require('/Users/mandyalford/turing/mod4/projects/runbelievable-fe/assets/colored-silhouettes-runners_23-2147619177.jpg')} style={{height:380, width:380}}/>
       <Text style={styles.greeting}>Welcome, Runner!</Text>
-      <Button style={styles.buddyButton}title='Find a RunBuddy'
+      <SearchButton 
+      title='Find a RunBuddy'
       color='green'
       accesibilityLabel='find a run buddy'/>
     </View>
