@@ -5,7 +5,7 @@ import { StyleSheet, Text, Button, View } from 'react-native';
 export default function Header() {
   return (
     <View style={styles.navigationContainer}>
-      <Button titleStyle={{fontSize: 500}} 
+      <Button titleStyle={{fontSize: 500}}
       title='Filter'
       color='white'
       accesibilityLabel='filter results'
