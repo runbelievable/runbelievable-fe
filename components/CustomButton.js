@@ -15,14 +15,14 @@ const CustomButton = props => {
 
 const styles = StyleSheet.create({
   button:{
-    backgroundColor: 'darkorange',
-    paddingVertical: 10,
-    width: 100,
-    borderRadius: 15,
+    // backgroundColor: 'white',
+    // paddingVertical: 10,
+    // width: 100,
+    // borderRadius: 15,
   },
   buttonText:{
-    color: 'white',
-    fontSize: 18,
+    color: 'darkorange',
+    fontSize: 22,
     textAlign: 'center',
   }
 })

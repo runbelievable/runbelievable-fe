@@ -1,23 +1,23 @@
 import * as React from 'react';
 import { StyleSheet, Text, Button, View } from 'react-native';
-import CustomButton from './CustomButton';
+// import CustomButton from './CustomButton';
 
 export default function Header() {
   return (
     <View style={styles.navigationContainer}>
-      <CustomButton
+      <Button titleStyle={{fontSize: 500}} 
       title='Filter'
-      color='blue'
+      color='white'
       accesibilityLabel='filter results'
       />
-      <CustomButton
+      <Button style={styles.navButton}
       title='Profile'
-      color='green'
+      color='white'
       accesibilityLabel='view your profile'
       />
-      <CustomButton
+      <Button style={styles.navButton}
       title='Chat'
-      color='purple'
+      color='white'
       accesibilityLabel='view your chats'
       />
     </View>
@@ -26,11 +26,16 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   navigationContainer: {
+    backgroundColor: 'darkorange',
     display: 'flex',
     flexDirection: 'row',
     width: 400,
     justifyContent: 'space-between',
     marginBottom: 40,
     paddingHorizontal: 5,
-  }
+    paddingVertical: 15,
+  },
+  navButton: {
+    color: 'pink',
+  },
 })
