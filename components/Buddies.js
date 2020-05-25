@@ -46,6 +46,7 @@ function Runner({ title, pace, location }) {
 export default function Buddies() {
   return (
       <SafeAreaView style={styles.container}>
+        <Header />
         <FlatList
           data={BUDDIESDATA}
           renderItem={({ item }) => <Runner title={item.title} pace={item.pace}
@@ -60,13 +61,17 @@ export default function Buddies() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: Constants.statusBarHeight,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 40,
   },
   item: {
-    backgroundColor: 'darkorange',
+    borderColor: 'darkorange',
+    borderWidth: 2,
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
+    width: 380,
   },
   pace: {
     fontSize: 18,
@@ -75,6 +80,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   title: {
-    fontSize: 22,  
+    fontSize: 22,
   }
 });
