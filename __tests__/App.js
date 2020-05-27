@@ -10,5 +10,5 @@ import renderer from 'react-test-renderer';
 // });
 
 it('tests the thing', () => {
-  expect('true').to.equal('true');
+  expect('true').toEqual('true');
 });
