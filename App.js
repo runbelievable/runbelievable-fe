@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Buddies from './components/Buddies';
 import User from './components/User';
+import Login from './components/Login';
 
 const instructions = Platform.select({
   ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,
@@ -21,6 +22,7 @@ export default function App() {
       <Stack.Screen name="Homepage" component={Homepage} />
       <Stack.Screen name="Buddies" component={Buddies} />
       <Stack.Screen name="User" component={User} />
+      <Stack.Screen name="Login" component={Login} />
     </Stack.Navigator>
   </NavigationContainer>
 

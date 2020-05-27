@@ -10,13 +10,13 @@ export default function Homepage({navigation}) {
     <View style={styles.container}>
       <Header navigation={navigation}/>
       <Text style={styles.title}>Runbelievable</Text>
-      <Image source={require('/Users/mandyalford/turing/mod4/projects/runbelievable-fe/assets/colored-silhouettes-runners_23-2147619177.jpg')} style={{height:380, width:380}}/>
+      <Image source={require('../assets/colored-silhouettes-runners_23-2147619177.jpg')} style={{height:380, width:380}}/>
       <Text style={styles.greeting}>Welcome, Runner!</Text>
       <SearchButton
-      title='Find a RunBuddy'
+      title='Log In'
       color='green'
-      accesibilityLabel='find a run buddy'
-      onPress={() => navigation.navigate('Buddies')}
+      accesibilityLabel='log in to your account'
+      onPress={() => navigation.navigate('Login')}
       />
     </View>
   )
