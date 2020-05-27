@@ -3,3 +3,7 @@ node_js:
   - "node"
 notifications:
   email: false
+install:
+  - npm install
+script:
+  - npm test
