@@ -6,19 +6,19 @@ import { createStackNavigator } from '@react-navigation/stack';
 export default function Header({navigation}) {
   return (
     <View style={styles.navigationContainer}>
-      <Button titleStyle={{fontSize: 500}}
+      <Button 
       title='Buddies'
       color='white'
       accesibilityLabel='find buddies to run with'
       onPress={() => navigation.navigate('Buddies')}
       />
-      <Button style={styles.navButton}
+      <Button
       title='Profile'
       color='white'
       accesibilityLabel='view your profile'
       onPress={() => navigation.navigate('User')}
       />
-      <Button style={styles.navButton}
+      <Button
       title='Chat'
       color='white'
       accesibilityLabel='view your chats'
@@ -38,8 +38,5 @@ const styles = StyleSheet.create({
     marginBottom: 40,
     paddingHorizontal: 5,
     paddingVertical: 15,
-  },
-  navButton: {
-    color: 'pink',
   },
 })

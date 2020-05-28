@@ -15,12 +15,10 @@ export default class Signup extends Component {
     }
 
 createUserCredentials(props){
-  console.log('signup')
   this.props.navigation.navigate('User')
 }
 
   render() {
-    console.log(this.props.navigation)
     return (
       <View style={styles.container}>
         <View style={styles.directions}>

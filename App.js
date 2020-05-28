@@ -19,7 +19,7 @@ const Stack = createStackNavigator();
 
 export default function App() {
   return (
-  <NavigationContainer style={styles.container}>
+  <NavigationContainer>
     <Stack.Navigator initialRouteName="Homepage">
       <Stack.Screen name="Homepage" component={Homepage} />
       <Stack.Screen name="Buddies" component={Buddies} />
@@ -32,22 +32,3 @@ export default function App() {
 
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'red',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});

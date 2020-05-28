@@ -14,7 +14,6 @@ export default function Homepage({navigation}) {
       <Text style={styles.greeting}>Welcome, Runner!</Text>
       <SearchButton
       title='Log In'
-      color='green'
       accesibilityLabel='log in to your account'
       onPress={() => navigation.navigate('Login')}
       />

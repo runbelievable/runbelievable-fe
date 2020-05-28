@@ -11,7 +11,6 @@ export default class Login extends Component {
     }
 
 submitUserCredentials(props){
-  console.log('here')
   this.props.navigation.navigate('User')
 }
 
@@ -56,7 +55,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'white',
     marginBottom: 400,
   },
   instructions: {
