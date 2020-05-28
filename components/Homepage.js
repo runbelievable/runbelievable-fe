@@ -10,14 +10,20 @@ export default function Homepage({navigation}) {
     <View style={styles.container}>
       <Header navigation={navigation}/>
       <Text style={styles.title}>Runbelievable</Text>
-      <Image source={require('/Users/mandyalford/turing/mod4/projects/runbelievable-fe/assets/colored-silhouettes-runners_23-2147619177.jpg')} style={{height:380, width:380}}/>
+      <Image source={require('../assets/colored-silhouettes-runners_23-2147619177.jpg')} style={{height:380, width:380}}/>
       <Text style={styles.greeting}>Welcome, Runner!</Text>
       <SearchButton
-      title='Find a RunBuddy'
-      color='green'
-      accesibilityLabel='find a run buddy'
-      onPress={() => navigation.navigate('Buddies')}
+      title='Log In'
+      accesibilityLabel='log in to your account'
+      onPress={() => navigation.navigate('Login')}
       />
+      <View style={styles.signup}>
+        <Text>Not a member?</Text>
+        <Button
+        title='Sign up'
+        onPress={() => navigation.navigate('Signup')}
+        />
+      </View>
     </View>
   )
 }
@@ -29,15 +35,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'white',
   },
-  buddyButton: {
-    borderWidth: 1,
-    borderColor: 'red',
-    height: 3,
+  signup: {
+    marginBottom: 30,
   },
   title: {
-    fontSize: 60,
+    fontSize: 55,
     textAlign: 'center',
-    paddingVertical: 10,
+    paddingVertical: 1,
   },
   greeting: {
     fontSize: 40,
