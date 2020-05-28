@@ -21,6 +21,7 @@ export default function Header({navigation}) {
       title='Chat'
       color='white'
       accesibilityLabel='view your chats'
+      onPress={() => navigation.navigate('Chat')}
       />
     </View>
   );

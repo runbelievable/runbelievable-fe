@@ -8,6 +8,7 @@ import Buddies from './components/Buddies';
 import User from './components/User';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Chat from './components/Chat';
 
 const instructions = Platform.select({
   ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,
@@ -25,6 +26,7 @@ export default function App() {
       <Stack.Screen name="User" component={User} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Signup" component={Signup} />
+      <Stack.Screen name="Chat" component={Chat} />
     </Stack.Navigator>
   </NavigationContainer>
 
