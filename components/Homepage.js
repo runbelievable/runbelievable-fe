@@ -18,6 +18,13 @@ export default function Homepage({navigation}) {
       accesibilityLabel='log in to your account'
       onPress={() => navigation.navigate('Login')}
       />
+      <View style={styles.signup}>
+        <Text>Not a member?</Text>
+        <Button
+        title='Sign up'
+        onPress={() => navigation.navigate('Signup')}
+        />
+      </View>
     </View>
   )
 }
@@ -29,15 +36,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'white',
   },
-  buddyButton: {
-    borderWidth: 1,
-    borderColor: 'red',
-    height: 3,
+  signup: {
+    marginBottom: 30,
   },
   title: {
-    fontSize: 60,
+    fontSize: 55,
     textAlign: 'center',
-    paddingVertical: 10,
+    paddingVertical: 1,
   },
   greeting: {
     fontSize: 40,
