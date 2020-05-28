@@ -10,7 +10,13 @@ export default class Login extends Component {
       password: '',
     }
 
+submitUserCredentials(props){
+  console.log('here')
+  this.props.navigation.navigate('User')
+}
+
   render() {
+    console.log(this.props.navigation)
     return (
       <View style={styles.container}>
         <Text style={styles.instructions}>Enter your username and password:</Text>
@@ -38,7 +44,7 @@ export default class Login extends Component {
         title='Submit'
         color='green'
         accesibilityLabel='Submit your login information'
-        onPress={() => this.props.navigation.navigate('User')}
+        onPress={(props) => this.submitUserCredentials(props)}
         />
       </View>
     )
