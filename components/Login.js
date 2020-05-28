@@ -10,30 +10,6 @@ export default class Login extends Component {
       password: '',
     }
 
-
-
-    // divb.addEventListener('click', function(e) {
-    //   savedEvent = e;
-    //   savedTarget = e.currentTarget;
-    //   setTimeout(function() {
-    //     console.log('b: currentTarget is now ' + e.currentTarget);
-    //   }, 0);
-    // }, false);
-
-
-  // updateUserName = (event) => {
-  //   var savedEvent;
-  //   var savedTarget;
-  //
-  //   savedEvent = event;
-  //   savedTarget = event.currentValue;
-  //   // event.preventDefault();
-  //   // console.log(savedEvent)
-  //   console.log(savedTarget)
-  //   // let value= event.target && event.target.value
-  //   this.setState({username: event.target}, () => {console.log(this.state)})
-  // }
-
   render() {
     return (
       <View style={styles.container}>
@@ -54,7 +30,7 @@ export default class Login extends Component {
         onChange={(e) => {
           this.setState({password: e.nativeEvent.text})
         }}
-        // value={this.state.password}
+        value={this.state.password}
         style={{borderColor: 'grey', borderWidth: 1, height: 50, width: 250, marginBottom: 15, paddingLeft: 10}}
         placeholder='password'
         />
@@ -62,9 +38,7 @@ export default class Login extends Component {
         title='Submit'
         color='green'
         accesibilityLabel='Submit your login information'
-        onPress={(e) => {
-          console.log(this.state)
-        }}
+        onPress={() => this.props.navigation.navigate('User')}
         />
       </View>
     )
