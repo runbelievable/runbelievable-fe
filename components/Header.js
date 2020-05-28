@@ -7,9 +7,10 @@ export default function Header({navigation}) {
   return (
     <View style={styles.navigationContainer}>
       <Button titleStyle={{fontSize: 500}}
-      title='Filter'
+      title='Buddies'
       color='white'
-      accesibilityLabel='filter results'
+      accesibilityLabel='find buddies to run with'
+      onPress={() => navigation.navigate('Buddies')}
       />
       <Button style={styles.navButton}
       title='Profile'

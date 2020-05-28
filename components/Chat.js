@@ -12,7 +12,25 @@ export default class Chat extends Component {
 
   render() {
     return(
-      <Text>This is chat</Text>
+    <View style={styles.container}>
+      <Header navigation={this.props.navigation}/>
+      <Text style={styles.message}>You have no chats. Find a buddy and start a chat!</Text>
+      <Image source={require('../assets/chat.jpg')} style={{height:380, width:380}}/>
+    </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: 'white',
+  },
+  message: {
+    fontSize: 22,
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+    textAlign: 'center',
+  }
+})
