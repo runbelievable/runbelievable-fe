@@ -14,9 +14,9 @@
     "expo": "~37.0.3",
     "expo-splash-screen": "^0.2.3",
     "expo-updates": "~0.2.0",
-    "react": "~16.9.0",
+    "react": "16.11.0",
     "react-dom": "~16.9.0",
-    "react-native": "~0.61.5",
+    "react-native": "0.62.2",
     "react-native-gesture-handler": "^1.6.1",
     "react-native-reanimated": "^1.7.1",
     "react-native-safe-area-context": "^2.0.1",
@@ -36,11 +36,11 @@
       "./jest.setup.js"
     ],
     "moduleNameMapper": {
-     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js"
-   },
-   "transformIgnorePatterns": [
-     "/node_modules/(?!native-base)/"
-   ]
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/(?!native-base)/"
+    ]
   },
   "private": true
 }
