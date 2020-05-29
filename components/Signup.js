@@ -32,7 +32,7 @@ createUserCredentials(props){
         style={{borderColor: 'grey', borderWidth: 1, height: 50, width: 250, marginBottom: 15, paddingLeft: 10}}
         placeholder='First Name'
         onChange={(e) => {
-          this.setState({username: e.nativeEvent.text})
+          this.setState({first_name: e.nativeEvent.text})
         }}
         />
         <TextInput
@@ -42,7 +42,7 @@ createUserCredentials(props){
         style={{borderColor: 'grey', borderWidth: 1, height: 50, width: 250, marginBottom: 15, paddingLeft: 10}}
         placeholder='Last Name'
         onChange={(e) => {
-          this.setState({password: e.nativeEvent.text})
+          this.setState({last_name: e.nativeEvent.text})
         }}
         />
         <TextInput
@@ -52,7 +52,7 @@ createUserCredentials(props){
         style={{borderColor: 'grey', borderWidth: 1, height: 50, width: 250, marginBottom: 15, paddingLeft: 10}}
         placeholder='Age'
         onChange={(e) => {
-          this.setState({username: e.nativeEvent.text})
+          this.setState({age: e.nativeEvent.text})
         }}
         />
         <TextInput
@@ -62,7 +62,7 @@ createUserCredentials(props){
         style={{borderColor: 'grey', borderWidth: 1, height: 50, width: 250, marginBottom: 15, paddingLeft: 10}}
         placeholder='Gender'
         onChange={(e) => {
-          this.setState({password: e.nativeEvent.text})
+          this.setState({gender: e.nativeEvent.text})
         }}
         />
         <TextInput
@@ -72,7 +72,7 @@ createUserCredentials(props){
         style={{borderColor: 'grey', borderWidth: 1, height: 50, width: 250, marginBottom: 15, paddingLeft: 10}}
         placeholder='Max Run Distance'
         onChange={(e) => {
-          this.setState({username: e.nativeEvent.text})
+          this.setState({max_run_distance: e.nativeEvent.text})
         }}
         />
         <TextInput
@@ -82,7 +82,7 @@ createUserCredentials(props){
         style={{borderColor: 'grey', borderWidth: 1, height: 50, width: 250, marginBottom: 15, paddingLeft: 10}}
         placeholder='Estimated Pace per Mile'
         onChange={(e) => {
-          this.setState({password: e.nativeEvent.text})
+          this.setState({estimated_mile_pace: e.nativeEvent.text})
         }}
         />
         <CustomButton
