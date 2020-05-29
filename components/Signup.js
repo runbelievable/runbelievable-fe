@@ -25,7 +25,7 @@ export default class Signup extends Component {
       },
       body: JSON.stringify(this.state)
     })
-      .then(response => response.json())
+      .then(response => console.log(response.json()))
       .catch(error => console.log(error))
 
     this.props.navigation.navigate('User')
