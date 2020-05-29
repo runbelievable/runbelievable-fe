@@ -12,6 +12,7 @@ export default class Login extends Component {
 
 submitUserCredentials(props){
   this.props.navigation.navigate('User')
+  this.setState({ username: '', password: '' })
 }
 
   render() {
