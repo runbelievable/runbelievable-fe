@@ -4,8 +4,6 @@ import Constants from 'expo-constants';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Header from './Header';
-import getAllUsers from './apiCalls';
-
 
 function Runner({ title, pace, location }) {
   return (
@@ -25,10 +23,10 @@ export default class Buddies extends Component {
   componentDidMount() {
     fetch('https://run-be.herokuapp.com/api/v1/users')
       .then(response => response.json())
-      .then(buddiesData => this.setState({ buddiesData: buddiesData.data}, () => console.log(this.state)))
+      .then(buddiesData => this.setState({ buddiesData: buddiesData.data }))
       .catch(error => console.log(error))
   }
-  
+
   render() {
     return (
         <SafeAreaView style={styles.container}>
