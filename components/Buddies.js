@@ -3,6 +3,7 @@ import { SafeAreaView, View, FlatList, StyleSheet, Text, Alert } from 'react-nat
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Header from './Header';
+import { getBuddies } from '../apicalls'
 
 function Runner({ title, pace, location }) {
   return (
@@ -20,8 +21,7 @@ export default class Buddies extends Component {
   }
 
   componentDidMount() {
-    fetch('https://run-be.herokuapp.com/api/v1/users')
-      .then(response => response.json())
+    getBuddies()
       .then(buddiesData => this.setState({ buddiesData: buddiesData.data }))
       .catch(error => console.log(error))
   }
