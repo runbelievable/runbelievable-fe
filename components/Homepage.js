@@ -10,7 +10,10 @@ export default function Homepage({navigation}) {
     <View style={styles.container}>
       <Header navigation={navigation}/>
       <Text style={styles.title}>Runbelievable</Text>
-      <Image source={require('../assets/colored-silhouettes-runners_23-2147619177.jpg')} style={{height:380, width:380}}/>
+      <Image
+      source={require('../assets/colored-silhouettes-runners_23-2147619177.jpg')} style={{height:380, width:380}}
+      testID={'logo'}
+      />
       <Text style={styles.greeting}>Welcome, Runner!</Text>
       <SearchButton
       title='Log In'
