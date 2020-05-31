@@ -26,8 +26,8 @@ export default class Login extends Component {
       validateUser(this.state.username, this.state.password)
       .then(response => {
         if (response.status === 200) {
-          console.log(response);
           let userInfo = response.json()
+          console.log(userInfo)
           this.setState({ userInfo: userInfo })
           this.props.navigation.navigate('User')
         } else {
@@ -55,6 +55,7 @@ export default class Login extends Component {
       <TextInput
         type='password'
         name='password'
+        secureTextEntry={true}
         onChange={(e) => {
           this.setState({password: e.nativeEvent.text, error: ''})
         }}
