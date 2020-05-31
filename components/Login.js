@@ -26,10 +26,11 @@ export default class Login extends Component {
       validateUser(this.state.username, this.state.password)
       .then(response => {
         if (response.status === 200) {
-          let userInfo = response.json()
-          console.log(userInfo)
-          this.setState({ userInfo: userInfo })
-          this.props.navigation.navigate('User')
+          let userInfo = response.json().then(data => this.setState({ userInfo: data.data }, () => {
+            this.props.navigation.navigate('User', {
+              userInfo: this.state.userInfo
+            })
+          }))
         } else {
           this.setState({ error: 'Your username or password is incorrect.' })
         }
