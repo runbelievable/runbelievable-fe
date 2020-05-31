@@ -31,9 +31,9 @@ export default class Buddies extends Component {
         <SafeAreaView style={styles.container}>
           <Header navigation={this.props.navigation}/>
           <FlatList
+            key={Date.now()}
             data={this.state.buddiesData}
             renderItem={({ item }) => <Runner
-            key={item.attributes.id} 
             title={item.attributes.username}
             pace={item.attributes.estimated_mile_pace}
             location={item.attributes.location}
