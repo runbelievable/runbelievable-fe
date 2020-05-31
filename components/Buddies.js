@@ -32,7 +32,9 @@ export default class Buddies extends Component {
           <Header navigation={this.props.navigation}/>
           <FlatList
             data={this.state.buddiesData}
-            renderItem={({ item }) => <Runner title={item.attributes.username}
+            renderItem={({ item }) => <Runner
+            key={item.attributes.id} 
+            title={item.attributes.username}
             pace={item.attributes.estimated_mile_pace}
             location={item.attributes.location}
             />}
