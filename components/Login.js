@@ -9,7 +9,8 @@ export default class Login extends Component {
     state = {
       username: '',
       password: '',
-      error: ''
+      error: '',
+      userInfo: {}
     }
 
   submitUserCredentials(props){
@@ -24,11 +25,13 @@ export default class Login extends Component {
   validateUserInfo(props) {
       validateUser(this.state.username, this.state.password)
       .then(response => {
-        if (response.ok) {
-          console.log('a ok');
+        if (response.status === 200) {
+          console.log(response);
+          let userInfo = response.json()
+          this.setState({ userInfo: userInfo })
           this.props.navigation.navigate('User')
         } else {
-          Alert.alert('no')
+          this.setState({ error: 'Your username or password is incorrect.' })
         }
       })
       .catch(error => console.log(error))
@@ -37,40 +40,40 @@ export default class Login extends Component {
 
   render() {
     let pageView =
-    <View>
-    <Text style={styles.instructions}>Enter your username and password:</Text>
-    <TextInput
-    type='email'
-    name='username'
-    value={this.state.username}
-    style={{borderColor: 'grey', borderWidth: 1, height: 50, width: 250, marginBottom: 15, paddingLeft: 10}}
-    placeholder='username'
-    onChange={(e) => {
-      this.setState({username: e.nativeEvent.text, error: ''})
-    }}
-    />
-    <TextInput
-    type='password'
-    name='password'
-    onChange={(e) => {
-      this.setState({password: e.nativeEvent.text, error: ''})
-    }}
-    value={this.state.password}
-    style={{borderColor: 'grey', borderWidth: 1, height: 50, width: 250, marginBottom: 15, paddingLeft: 10}}
-    placeholder='password'
-    />
-    <CustomButton
-    title='Submit'
-    color='green'
-    accesibilityLabel='Submit your login information'
-    onPress={(props) => this.submitUserCredentials(props)}
-    />
+    <View style={styles.innerContainer}>
+      <Text style={styles.instructions}>Enter your username and password:</Text>
+      <TextInput
+        type='email'
+        name='username'
+        value={this.state.username}
+        style={{borderColor: 'grey', borderWidth: 1, height: 50, width: 250, marginBottom: 15, paddingLeft: 10}}
+        placeholder='username'
+        onChange={(e) => {
+          this.setState({username: e.nativeEvent.text, error: ''})
+      }}
+      />
+      <TextInput
+        type='password'
+        name='password'
+        onChange={(e) => {
+          this.setState({password: e.nativeEvent.text, error: ''})
+        }}
+        value={this.state.password}
+        style={{borderColor: 'grey', borderWidth: 1, height: 50, width: 250, marginBottom: 15, paddingLeft: 10}}
+        placeholder='password'
+      />
+      <CustomButton
+        title='Submit'
+        color='green'
+        accesibilityLabel='Submit your login information'
+        onPress={(props) => this.submitUserCredentials(props)}
+      />
     </View>
 
       if (this.state.error) {
         return (
           <View style={styles.container}>
-            <Text>{this.state.error}</Text>
+            <Text style={styles.errorMessage}>{this.state.error}</Text>
             {pageView}
           </View>
         )
@@ -81,20 +84,25 @@ export default class Login extends Component {
           </View>
         )
       }
-
     }
   }
-
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 400,
+    marginBottom: 300,
   },
   instructions: {
     fontSize: 22,
     marginBottom: 15,
+  },
+  innerContainer: {
+    alignItems: 'center',
+  },
+  errorMessage: {
+    color: 'red',
+    fontSize: 18
   }
 })
