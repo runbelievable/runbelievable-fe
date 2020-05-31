@@ -27,8 +27,9 @@ export default class Login extends Component {
       .then(response => {
         if (response.status === 200) {
           let userInfo = response.json().then(data => this.setState({ userInfo: data.data }, () => {
+            console.log(this.state.userInfo.id)
             this.props.navigation.navigate('User', {
-              userInfo: this.state.userInfo.id
+              userInfo: this.state.userInfo
             })
           }))
         } else {
