@@ -13,6 +13,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
+<<<<<<< HEAD
 SF:apicalls.js
 FN:1,(anonymous_0)
 FN:3,(anonymous_1)
@@ -57,6 +58,39 @@ DA:39,6
 DA:47,2
 LF:9
 LH:8
+=======
+SF:components/Buddies.js
+FN:7,Runner
+FN:22,(anonymous_1)
+FN:24,(anonymous_2)
+FN:25,(anonymous_3)
+FN:26,(anonymous_4)
+FN:29,(anonymous_5)
+FN:35,(anonymous_6)
+FN:39,(anonymous_7)
+FNF:8
+FNH:0
+FNDA:0,Runner
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+FNDA:0,(anonymous_4)
+FNDA:0,(anonymous_5)
+FNDA:0,(anonymous_6)
+FNDA:0,(anonymous_7)
+DA:8,0
+DA:18,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:30,0
+DA:35,0
+DA:39,0
+DA:47,1
+LF:10
+LH:1
+>>>>>>> 8ad88af7cc0da7c8efcc099656abe2a5dc856f89
 BRF:0
 BRH:0
 end_of_record
@@ -95,6 +129,7 @@ FN:13,(anonymous_1)
 FN:19,(anonymous_2)
 FN:25,(anonymous_3)
 FNF:4
+<<<<<<< HEAD
 FNH:1
 FNDA:2,Header
 FNDA:0,(anonymous_1)
@@ -107,6 +142,20 @@ DA:25,0
 DA:31,2
 LF:5
 LH:2
+=======
+FNH:0
+FNDA:0,Header
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+DA:7,0
+DA:13,0
+DA:19,0
+DA:25,0
+DA:31,1
+LF:5
+LH:1
+>>>>>>> 8ad88af7cc0da7c8efcc099656abe2a5dc856f89
 BRF:0
 BRH:0
 end_of_record
