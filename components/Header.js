@@ -6,11 +6,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 export default function Header({navigation}) {
   return (
     <View style={styles.navigationContainer}>
-      <Button 
-      title='Buddies'
+      <Button
+      title='Trail'
       color='white'
-      accesibilityLabel='find buddies to run with'
-      onPress={() => navigation.navigate('Buddies')}
+      accesibilityLabel='find a random trail'
+      onPress={() => navigation.navigate('Trail')}
       />
       <Button
       title='Profile'
