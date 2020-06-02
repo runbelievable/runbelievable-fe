@@ -6,7 +6,11 @@ Runbelievable is Runbelievable is an iOS app created with React Native on the fr
 
 ### Technology Used for Frontend
   * React Native
+  * React Navigation
+  * Gifted Chat
   * Travis CI
+  * React Native Testing Library
+  * Jest Native
 
 ## Installation
 1. `git clone git@github.com:runbelievable/runbelievable-fe.git`
