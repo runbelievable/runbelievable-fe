@@ -41,7 +41,7 @@ export default class Chat extends Component {
         body: JSON.stringify(
           {
             'topic': 'test topic',
-            'body': 'hello',
+            'body': this.state.text,
             'username': 'buffaloman'
           }
         )
