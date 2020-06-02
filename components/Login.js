@@ -10,7 +10,7 @@ export default class Login extends Component {
       username: '',
       password: '',
       error: '',
-      userInfo: {}
+      userInfo: {},
     }
 
   submitUserCredentials(props){

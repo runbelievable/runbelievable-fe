@@ -24,8 +24,7 @@ export default class Chat extends Component {
       this.setState({
         messages: [
           {
-            text: 'Hello developer',
-            topic: 'Buddy Message',
+            text: 'Hello runner',
           },
         ],
       })
@@ -42,7 +41,7 @@ export default class Chat extends Component {
           {
             'topic': 'test topic',
             'body': this.state.text,
-            'username': 'buffaloman'
+            'username': this.props.route.params.username,
           }
         )
       }).then(response => console.log(response.status))
@@ -52,7 +51,7 @@ export default class Chat extends Component {
     }
 
     render() {
-      console.log('route params chat', this.props.route.params.userId)
+      console.log('route params userid', this.props.route.params.loggedUser)
       return (
         <View style={{flex: 1}}>
           <Header

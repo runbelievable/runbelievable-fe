@@ -4,10 +4,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Header from './Header';
 
-function Runner({ title, pace, location, navigation, userInfo }) {
-  console.log('buddiesclick', userInfo)
+
+function Runner({ title, pace, location, navigation, userInfo, userId }) {
+  console.log('buddiesclickUser', userId)
+  console.log('buddiesclickBuddy', userInfo)
   return (
-     <TouchableOpacity onPress={() => navigation.navigate('User', {
+     <TouchableOpacity onPress={() => navigation.navigate('Buddy', {
        buddyInfo: userInfo
      })}>
       <View style={styles.item}>
@@ -45,6 +47,7 @@ export default class Buddies extends Component {
             data={this.state.buddiesData}
             renderItem={({ item }) =>
             <Runner
+            userId={this.props.route.params.userId}
             userInfo={item}
             navigation={this.props.navigation}
             title={item.attributes.username}
