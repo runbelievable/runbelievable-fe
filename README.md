@@ -19,8 +19,7 @@ Runbelievable is Runbelievable is an iOS app created with React Native on the fr
 
 ## Contributors
 
-[Mandy Alford](https://github.com/MandyAlford)
-
-[Tanisha L Davey](https://github.com/tanishalatoya)
+* [Mandy Alford](https://github.com/MandyAlford)
+* [Tanisha L Davey](https://github.com/tanishalatoya)
 
 Link to the backend repo [here](https://github.com/runbelievable/runbelievable-backend), and the microservice [here](https://github.com/runbelievable/backend_microservice).
