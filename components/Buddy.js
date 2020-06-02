@@ -6,6 +6,8 @@ import Header from './Header';
 import { getSingleUser } from '../apiCalls';
 
 export default function Buddy ({navigation, route}){
+  console.log('Buddy logged in user', route.params.userId)
+  console.log('buddys info', route.params.buddyInfo )
   return (
     <View style={styles.container}>
       <Header

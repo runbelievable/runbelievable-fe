@@ -10,7 +10,8 @@ function Runner({ title, pace, location, navigation, userInfo, userId }) {
   console.log('buddiesclickBuddy', userInfo)
   return (
      <TouchableOpacity onPress={() => navigation.navigate('Buddy', {
-       buddyInfo: userInfo
+       buddyInfo: userInfo,
+       userId: userId
      })}>
       <View style={styles.item}>
         <Text style={styles.title}>{title}</Text>

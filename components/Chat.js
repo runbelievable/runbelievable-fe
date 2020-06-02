@@ -51,7 +51,8 @@ export default class Chat extends Component {
     }
 
     render() {
-      console.log('route params userid', this.props.route.params.loggedUser)
+      console.log('route params userid', this.props.route.params.userId)
+      console.log('route params username', this.props.route.params.username)
       return (
         <View style={{flex: 1}}>
           <Header
