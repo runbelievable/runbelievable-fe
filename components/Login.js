@@ -23,7 +23,7 @@ export default class Login extends Component {
   }
 
   validateUserInfo(props) {
-      validateUser(this.state.username, this.state.password)
+      validateUser(this.state.username.toLowerCase(), this.state.password.toLowerCase())
       .then(response => {
         if (response.status === 201) {
           let userInfo = response.json().then(data => this.setState({ userInfo: data.data }, () => {

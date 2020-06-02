@@ -24,7 +24,7 @@ export default class Chat extends Component {
       this.setState({
         messages: [
           {
-            text: 'Hello runner',
+            text: 'Hello runner!',
           },
         ],
       })
@@ -32,7 +32,7 @@ export default class Chat extends Component {
 
     onSend(messages = []) {
       console.log(this.state.messages)
-      fetch('https://run-be.herokuapp.com/api/v1/users/15/messages', {
+      fetch(`https://run-be.herokuapp.com/api/v1/users/${this.props.route.params.userId}/messages`, {
         method: 'POST',
         headers: {
           'content-type': 'application/json'
@@ -44,7 +44,7 @@ export default class Chat extends Component {
             'username': this.props.route.params.username,
           }
         )
-      }).then(response => console.log(response.status))
+      }).then(response => console.log(response))
       this.setState(previousState => ({
         messages: GiftedChat.append(previousState.messages, messages),
       }))
