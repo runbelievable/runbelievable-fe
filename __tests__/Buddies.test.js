@@ -7,7 +7,7 @@ import Buddies from '../components/Buddies';
 // import 'isomorphic-fetch';
 import { getBuddies } from '../apicalls';
 
-jest.mock('../apicalls')
+jest.mock('../apiCalls')
 
 test('Buddies should return a list of runners', async() => {
     getBuddies.mockResolvedValueOnce({"data":[
