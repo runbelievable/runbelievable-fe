@@ -3,26 +3,33 @@ import { StyleSheet, Text, Button, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-export default function Header({navigation}) {
+export default function Header({navigation, userId}) {
+  console.log('userId', userId)
   return (
     <View style={styles.navigationContainer}>
-      <Button 
+      <Button
       title='Buddies'
       color='white'
       accesibilityLabel='find buddies to run with'
-      onPress={() => navigation.navigate('Buddies')}
+      onPress={() => navigation.navigate('Buddies', {
+        userId: userId
+      })}
       />
       <Button
       title='Profile'
       color='white'
       accesibilityLabel='view your profile'
-      onPress={() => navigation.navigate('User')}
+      onPress={() => navigation.navigate('User', {
+        userId: userId
+      })}
       />
       <Button
       title='Chat'
       color='white'
       accesibilityLabel='view your chats'
-      onPress={() => navigation.navigate('Chat')}
+      onPress={() => navigation.navigate('Chat', {
+        userId: userId
+      })}
       />
     </View>
   );
