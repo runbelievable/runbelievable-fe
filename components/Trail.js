@@ -12,7 +12,7 @@ export default class Trail extends Component {
   }
 
   componentDidMount() {
-    getAnotherRandomTrail()
+    this.getAnotherRandomTrail()
   }
 
   getAnotherRandomTrail = () => {
