@@ -11,7 +11,9 @@ export default function Header({navigation, userId}) {
       title='Trail'
       color='white'
       accesibilityLabel='find a random trail'
-      onPress={() => navigation.navigate('Trail')}
+      onPress={() => navigation.navigate('Trail', {
+        userId: userId
+      })}
       />
       <Button
       title='Profile'
