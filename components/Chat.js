@@ -39,8 +39,8 @@ export default class Chat extends Component {
         },
         body: JSON.stringify(
           {
-            'topic': 'test topic',
-            'body': this.state.text,
+            'topic': 'still test topic',
+            'body': 'test body',
             'username': this.props.route.params.username,
           }
         )

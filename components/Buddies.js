@@ -28,7 +28,7 @@ export default class Buddies extends Component {
   }
 
   componentDidMount() {
-    fetch('https://run-be.herokuapp.com/api/v1/users')
+    fetch(`https://run-be.herokuapp.com/api/v1/users/${this.props.route.params.userId}/find_runner`)
       .then(response => response.json())
       .then(buddiesData => this.setState({ buddiesData: buddiesData.data }))
       .catch(error => console.log(error))
