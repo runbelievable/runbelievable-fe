@@ -57,7 +57,7 @@ export default class Login extends Component {
       <TextInput
         type='password'
         name='password'
-
+        secureTextEntry={true}
         onChange={(e) => {
           this.setState({password: e.nativeEvent.text, error: ''})
         }}
