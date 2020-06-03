@@ -9,6 +9,7 @@ import User from './components/User';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Chat from './components/Chat';
+import Trail from './components/Trail';
 import Buddy from './components/Buddy';
 
 const instructions = Platform.select({
@@ -28,7 +29,9 @@ export default function App() {
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Signup" component={Signup} />
       <Stack.Screen name="Chat" component={Chat} />
+      <Stack.Screen name="Trail" component={Trail} />
       <Stack.Screen name="Buddy" component={Buddy} />
+
     </Stack.Navigator>
   </NavigationContainer>
 
