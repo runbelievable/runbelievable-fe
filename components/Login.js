@@ -10,7 +10,7 @@ export default class Login extends Component {
       username: '',
       password: '',
       error: '',
-      userInfo: {}
+      userInfo: {},
     }
 
   submitUserCredentials(props){
@@ -23,9 +23,9 @@ export default class Login extends Component {
   }
 
   validateUserInfo(props) {
-      validateUser(this.state.username, this.state.password)
+      validateUser(this.state.username.toLowerCase(), this.state.password.toLowerCase())
       .then(response => {
-        if (response.status === 200) {
+        if (response.status === 201) {
           let userInfo = response.json().then(data => this.setState({ userInfo: data.data }, () => {
             console.log(this.state.userInfo.id)
             this.props.navigation.navigate('User', {
@@ -57,7 +57,7 @@ export default class Login extends Component {
       <TextInput
         type='password'
         name='password'
-        secureTextEntry={true}
+
         onChange={(e) => {
           this.setState({password: e.nativeEvent.text, error: ''})
         }}

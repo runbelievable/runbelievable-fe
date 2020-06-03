@@ -4,10 +4,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Header from './Header';
 
-function Runner({ title, pace, location, navigation, userInfo }) {
+
+function Runner({ title, pace, location, navigation, userInfo, userId }) {
+  console.log('buddiesclickUser', userId)
+  console.log('buddiesclickBuddy', userInfo)
   return (
-     <TouchableOpacity onPress={() => navigation.navigate('User', {
-       userInfo: userInfo
+     <TouchableOpacity onPress={() => navigation.navigate('Buddy', {
+       buddyInfo: userInfo,
+       userId: userId
      })}>
       <View style={styles.item}>
         <Text style={styles.title}>{title}</Text>
@@ -24,7 +28,7 @@ export default class Buddies extends Component {
   }
 
   componentDidMount() {
-    fetch('https://run-be.herokuapp.com/api/v1/users')
+    fetch(`https://run-be.herokuapp.com/api/v1/users/${this.props.route.params.userId}/find_runner`)
       .then(response => response.json())
       .then(buddiesData => this.setState({ buddiesData: buddiesData.data }))
       .catch(error => console.log(error))
@@ -37,12 +41,14 @@ export default class Buddies extends Component {
   render() {
     return (
         <SafeAreaView style={styles.container}>
-          <Header navigation={this.props.navigation}/>
+          <Header
+          userId={this.props.route.params.userId} navigation={this.props.navigation}/>
           <FlatList
             key={Date.now()}
             data={this.state.buddiesData}
             renderItem={({ item }) =>
             <Runner
+            userId={this.props.route.params.userId}
             userInfo={item}
             navigation={this.props.navigation}
             title={item.attributes.username}

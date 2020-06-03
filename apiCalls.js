@@ -4,8 +4,16 @@ export const getBuddies = () => {
 }
 
 export const validateUser = (name, pword) => {
-  return fetch(`https://run-be.herokuapp.com/api/v1/login?username=${name}&password=${pword}`)
+  return fetch(`https://run-be.herokuapp.com/api/v1/login`, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      username: name,
+      password: pword
+    })
+  })
 }
+
 
 export const getSingleUser = (id) => {
   return fetch(`https://run-be.herokuapp.com/api/v1/users/${id}`)
