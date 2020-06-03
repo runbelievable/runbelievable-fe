@@ -2,6 +2,7 @@ import * as React from 'react';
 import { StyleSheet, Text, Button, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { logOutUser } from '../apiCalls';
 
 export default function Header({navigation, userId}) {
   console.log('userId', userId)
@@ -24,12 +25,13 @@ export default function Header({navigation, userId}) {
       })}
       />
       <Button
-      title='Chat'
+      title='Log Out'
       color='white'
-      accesibilityLabel='view your chats'
-      onPress={() => navigation.navigate('Chat', {
-        userId: userId
-      })}
+      accesibilityLabel='Log out of the app'
+      onPress={() => {
+        logOutUser()
+        navigation.navigate('Homepage')
+      }}
       />
     </View>
   );
