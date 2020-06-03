@@ -1,5 +1,5 @@
-export const getBuddies = () => {
-  return fetch('https://run-be.herokuapp.com/api/v1/users')
+export const getBuddies = (id) => {
+  return fetch(`https://run-be.herokuapp.com/api/v1/users/${id}/find_runner`)
     .then(response => response.json())
 }
 

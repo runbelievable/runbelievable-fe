@@ -3,11 +3,10 @@ import { SafeAreaView, View, FlatList, StyleSheet, Text, Alert, TouchableOpacity
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Header from './Header';
+import { getBuddies } from '../apiCalls';
 
 
 function Runner({ title, pace, location, navigation, userInfo, userId }) {
-  console.log('buddiesclickUser', userId)
-  console.log('buddiesclickBuddy', userInfo)
   return (
      <TouchableOpacity onPress={() => navigation.navigate('Buddy', {
        buddyInfo: userInfo,
@@ -28,8 +27,8 @@ export default class Buddies extends Component {
   }
 
   componentDidMount() {
-    fetch(`https://run-be.herokuapp.com/api/v1/users/${this.props.route.params.userId}/find_runner`)
-      .then(response => response.json())
+    const currentId = this.props.route.params.userId
+    getBuddies(currentId)
       .then(buddiesData => this.setState({ buddiesData: buddiesData.data }))
       .catch(error => console.log(error))
   }
