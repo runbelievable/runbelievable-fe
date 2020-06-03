@@ -54,7 +54,28 @@ test('Buddies should return a list of runners', async() => {
             }
         }
     ]})
-    const { getByText } = render(<Buddies />)
+
+    const route = {
+      params: {
+        buddyInfo: {
+          attributes: {
+            age: "32",
+            estimated_mile_pace: "09:00",
+            first_name: "Michelle",
+            gender: "Female",
+            last_name: "Seinfeld",
+            location: "Denver",
+            max_run_distance: 10,
+            username: "Sparky"
+          },
+          id: "2",
+          type: "user",
+        },
+        userId: "1",
+      }
+    }
+
+    const { getByText } = render(<Buddies route={route}/>)
 
     const username = await waitFor(() => {
       expect(getByText('Sparky')).toBeTruthy()
