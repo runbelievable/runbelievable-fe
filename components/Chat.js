@@ -24,10 +24,19 @@ export default class Chat extends Component {
     componentDidMount() {
       fetch(`https://run-be.herokuapp.com/api/v1/users/${this.props.route.params.userId}/messages`)
         .then(response => response.json())
-        .then(data => console.log(data))
-        .then(data => this.setState({
-          messages: data.data,
+        // .then(data => console.log(data.data))
+        .then(data => data.data.map(message => {
+          return message = {
+            key: message.id,
+            id: message.id,
+            text: message.attributes.body,
+            createdAt: message.attributes.created_at,
+            user: {
+              id: message.attributes.sent_messageable_id
+            }
+          }
         }))
+        .then(data => this.setState({messages: data}))
 
     }
 
