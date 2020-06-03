@@ -18,20 +18,21 @@ function Message() {
 export default class Chat extends Component {
   state = {
       messages: [],
+      currentMessage: '',
     }
 
     componentDidMount() {
-      this.setState({
-        messages: [
-          {
-            text: 'Hello runner!',
-          },
-        ],
-      })
+      fetch(`https://run-be.herokuapp.com/api/v1/users/${this.props.route.params.userId}/messages`)
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .then(data => this.setState({
+          messages: data.data,
+        }))
+
     }
 
     onSend(messages = []) {
-      console.log(this.state.messages)
+      console.log(this.state.currentMessage)
       fetch(`https://run-be.herokuapp.com/api/v1/users/${this.props.route.params.userId}/messages`, {
         method: 'POST',
         headers: {
@@ -40,7 +41,7 @@ export default class Chat extends Component {
         body: JSON.stringify(
           {
             'topic': 'still test topic',
-            'body': 'test body',
+            'body': this.state.currentMessage,
             'username': this.props.route.params.username,
           }
         )
@@ -50,9 +51,16 @@ export default class Chat extends Component {
       }))
     }
 
+    // handleInput = (e) => {
+    //   this.setState({
+    //     currentMessage: (e.nativeEvent.text)
+    //   })
+    // }
+
     render() {
-      console.log('route params userid', this.props.route.params.userId)
-      console.log('route params username', this.props.route.params.username)
+      console.log('currentMessage', this.state.currentMessage)
+      // console.log('route params userid', this.props.route.params.userId)
+      // console.log('route params username', this.props.route.params.username)
       return (
         <View style={{flex: 1}}>
           <Header
@@ -60,6 +68,10 @@ export default class Chat extends Component {
           navigation={this.props.navigation}
           />
           <GiftedChat
+            text={this.state.currentMessage}
+            onInputTextChanged={inputText => {
+              this.setState({currentMessage: inputText})
+            }}
             messages={this.state.messages}
             onSend={messages => this.onSend(messages)}
             user={{
