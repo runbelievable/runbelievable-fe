@@ -16,7 +16,7 @@ export default class Trail extends Component {
   }
 
   getAnotherRandomTrail = () => {
-    this.findRandomTrail()
+    findRandomTrail()
       .then(data => this.setState({ randomTrail: data.data.attributes }))
   }
 

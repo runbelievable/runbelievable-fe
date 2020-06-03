@@ -24,3 +24,7 @@ export const findRandomTrail = (id) => {
   return fetch(`https://run-be.herokuapp.com/api/v1/users/${id}/random_trail`)
     .then(response => response.json())
 }
+
+export const logOutUser = () => {
+  return fetch('https://run-be.herokuapp.com/api/v1/logout')
+}
