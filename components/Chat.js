@@ -22,17 +22,16 @@ export default class Chat extends Component {
     }
 
     componentDidMount() {
-      fetch(`https://run-be.herokuapp.com/api/v1/users/${this.props.route.params.userId}/messages`)
+      fetch(`https://run-be.herokuapp.com/api/v1/users/${this.props.route.params.userId}/message-conversations/${this.props.route.params.username}`)
         .then(response => response.json())
-        // .then(data => console.log(data.data))
         .then(data => data.data.map(message => {
           return message = {
             key: message.id,
-            id: message.id,
+            _id: message.id,
             text: message.attributes.body,
             createdAt: message.attributes.created_at,
             user: {
-              id: message.attributes.sent_messageable_id
+              _id: message.attributes.sent_messageable_id
             }
           }
         }))
@@ -41,7 +40,6 @@ export default class Chat extends Component {
     }
 
     onSend(messages = []) {
-      console.log(this.state.currentMessage)
       fetch(`https://run-be.herokuapp.com/api/v1/users/${this.props.route.params.userId}/messages`, {
         method: 'POST',
         headers: {
@@ -54,22 +52,15 @@ export default class Chat extends Component {
             'username': this.props.route.params.username,
           }
         )
-      }).then(response => console.log(response))
+      })
+      .then(response => console.log(response))
+      console.log(messages)
       this.setState(previousState => ({
-        messages: GiftedChat.append(previousState.messages, messages),
+        messages: GiftedChat.append(previousState.messages, messages)
       }))
     }
 
-    // handleInput = (e) => {
-    //   this.setState({
-    //     currentMessage: (e.nativeEvent.text)
-    //   })
-    // }
-
     render() {
-      console.log('currentMessage', this.state.currentMessage)
-      // console.log('route params userid', this.props.route.params.userId)
-      // console.log('route params username', this.props.route.params.username)
       return (
         <View style={{flex: 1}}>
           <Header
@@ -90,73 +81,9 @@ export default class Chat extends Component {
         </View>
       )
     }
-
-
-  // state = {
-  //   messages: 'test',
-  //   currentMessage: '',
-  //   messageTopic: '',
-  // }
-  //
-  // sendMessage = () => {
-  //   console.log('message')
-  // }
-  //
-  //
-  // render() {
-  //   if(this.state.messages) {
-  //     return(
-  //       <View style={styles.container}>
-  //         <View style={styles.messageArea}>
-  //         <GiftedChat
-  //           messages={this.state.messages}
-  //           onSend={() =>  {Alert.alert('Tanisha Rocks')}}
-  //           user={{
-  //             _id: 1,
-  //           }}
-  //         />
-  //         </View>
-  //         <View style={styles.messageInput}>
-  //           <TextInput
-  //           type='text'
-  //           name='messageTopic'
-  //           placeholder='Enter a message topic'
-  //           value={this.state.messageTopic}
-  //           style={{borderColor: 'grey', borderWidth: 1, height: 50, width: 300, marginBottom: 15, paddingLeft: 10}}
-  //           onChange={(e) => {
-  //             this.setState({messageTopic: e.nativeEvent.text})
-  //           }}
-  //           />
-  //           <TextInput
-  //           type='text'
-  //           name='currentMessage'
-  //           placeholder='Enter a message'
-  //           value={this.state.currentMessage}
-  //           style={{borderColor: 'grey', borderWidth: 1, height: 50, width: 300, marginBottom: 15, paddingLeft: 10}}
-  //           onChange={(e) => {
-  //             this.setState({currentMessage: e.nativeEvent.text})
-  //           }}
-  //           />
-  //           <Button
-  //           title='Send'
-  //           color='darkorange'
-  //           accesibilityLabel='send a message'
-  //           onPress={() => this.sendMessage()}
-  //            />
-  //         </View>
-  //       </View>
-  //     )
-  //   } else {
-  //     return(
-  //     <View style={styles.emptyContainer}>
-  //       <Header navigation={this.props.navigation}/>
-  //       <Text style={styles.messages}>You have no chats. Find a buddy and start a chat!</Text>
-  //       <Image source={require('../assets/chat.jpg')} style={{height:380, width:380}}/>
-  //     </View>
-  //     )
-  //   }
-  // }
 }
+
+
 const offset = 24;
 
 const styles = StyleSheet.create({
@@ -185,17 +112,4 @@ const styles = StyleSheet.create({
   messageArea: {
 
   },
-  // sentMessage: {
-  //   height: offset * 2,
-  //   margin: offset,
-  //   paddingHorizontal: offset,
-  //   borderColor: '#111111',
-  //   borderWidth: 1,
-  // },
-  // receivedMessage: {
-  //   backgroundColor: 'yellow',
-  //   borderRadius: 10,
-  //   padding: 5,
-  //   width: 200,
-  // }
 })
