@@ -5,7 +5,7 @@ import { render, fireEvent, waitFor } from 'react-native-testing-library';
 import '@testing-library/jest-native'
 import Buddies from '../components/Buddies';
 // import 'isomorphic-fetch';
-import { getBuddies } from '../apicalls';
+import { getBuddies } from '../apiCalls';
 
 jest.mock('../apiCalls')
 
