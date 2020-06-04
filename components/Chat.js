@@ -6,15 +6,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Header from './Header';
 import { GiftedChat } from 'react-native-gifted-chat'
 
-function Message() {
-    return(
-      <View style={styles.sentMessage}>
-      <Text> Test
-      </Text>
-      </View>
-    )
-}
-
 export default class Chat extends Component {
   state = {
       messages: [],
@@ -35,7 +26,7 @@ export default class Chat extends Component {
             }
           }
         }))
-        .then(data => this.setState({messages: data}))
+        .then(data => this.setState({messages: data.reverse()}))
 
     }
 
@@ -53,8 +44,7 @@ export default class Chat extends Component {
           }
         )
       })
-      .then(response => console.log(response))
-      console.log(messages)
+
       this.setState(previousState => ({
         messages: GiftedChat.append(previousState.messages, messages)
       }))
@@ -63,10 +53,12 @@ export default class Chat extends Component {
     render() {
       return (
         <View style={{flex: 1}}>
+          <View style={styles.header}>
           <Header
           userId={this.props.route.params.userId}
           navigation={this.props.navigation}
           />
+          </View>
           <GiftedChat
             text={this.state.currentMessage}
             onInputTextChanged={inputText => {
@@ -98,18 +90,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingTop: 30,
   },
-  message: {
-    fontSize: 22,
-    paddingHorizontal: 10,
-    paddingVertical: 10,
-    textAlign: 'center',
-  },
-  messageInput: {
-    alignSelf: 'center',
-    display: 'flex',
-    marginBottom: 20,
-  },
-  messageArea: {
-
+  header: {
+    alignItems: 'center'
   },
 })
