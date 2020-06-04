@@ -30,7 +30,7 @@ test('Buddy render the correct items to the page', () => {
 
     const { getByText } = render(<Buddy route={route}/>)
 
-    const routes = getByText('Favorite Routes')
+    const routes = getByText('Location: Denver')
 
     expect(routes).not.toBeNull()
 })
