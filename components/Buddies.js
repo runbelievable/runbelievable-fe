@@ -8,11 +8,13 @@ import { getBuddies } from '../apiCalls';
 
 function Runner({ title, pace, location, navigation, userInfo, userId }) {
   return (
-     <TouchableOpacity onPress={() => navigation.navigate('Buddy', {
+     <TouchableOpacity
+     onPress={() => navigation.navigate('Buddy', {
        buddyInfo: userInfo,
        userId: userId
      })}>
-      <View style={styles.item}>
+      <View
+      style={styles.item}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.pace}>{pace}/min</Text>
         <Text style={styles.location}>{location}</Text>
@@ -43,10 +45,10 @@ export default class Buddies extends Component {
           <Header
           userId={this.props.route.params.userId} navigation={this.props.navigation}/>
           <FlatList
-            key={Date.now()}
             data={this.state.buddiesData}
             renderItem={({ item }) =>
             <Runner
+            key={item.id}
             userId={this.props.route.params.userId}
             userInfo={item}
             navigation={this.props.navigation}

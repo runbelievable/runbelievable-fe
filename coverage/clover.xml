@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1591219087815" clover="3.2.0">
-  <project timestamp="1591219087815" name="All files">
-    <metrics statements="118" coveredstatements="28" conditionals="11" coveredconditionals="1" methods="73" coveredmethods="3" elements="202" coveredelements="32" complexity="0" loc="118" ncloc="118" packages="2" files="13" classes="13"/>
+<coverage generated="1591300524551" clover="3.2.0">
+  <project timestamp="1591300524552" name="All files">
+    <metrics statements="121" coveredstatements="42" conditionals="11" coveredconditionals="1" methods="75" coveredmethods="10" elements="207" coveredelements="53" complexity="0" loc="121" ncloc="121" packages="2" files="13" classes="13"/>
     <package name="runbelievable-fe">
-      <metrics statements="14" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="0"/>
+      <metrics statements="21" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="0"/>
       <file name="App.js" path="/Users/mandyalford/turing/mod4/projects/runbelievable-fe/App.js">
         <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="15" count="1" type="stmt"/>
@@ -11,67 +11,69 @@
         <line num="23" count="0" type="stmt"/>
       </file>
       <file name="apiCalls.js" path="/Users/mandyalford/turing/mod4/projects/runbelievable-fe/apiCalls.js">
-        <metrics statements="11" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
+        <metrics statements="18" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="11" coveredmethods="0"/>
+        <line num="1" count="4" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
-        <line num="6" count="3" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="23" count="3" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="31" count="4" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
       </file>
     </package>
     <package name="runbelievable-fe.components">
-      <metrics statements="104" coveredstatements="22" conditionals="11" coveredconditionals="1" methods="65" coveredmethods="3"/>
+      <metrics statements="100" coveredstatements="33" conditionals="11" coveredconditionals="1" methods="63" coveredmethods="10"/>
       <file name="Buddies.js" path="/Users/mandyalford/turing/mod4/projects/runbelievable-fe/components/Buddies.js">
-        <metrics statements="15" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="0"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
+        <metrics statements="13" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="6"/>
+        <line num="10" count="3" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
-        <line num="67" count="1" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="49" count="3" type="stmt"/>
+        <line num="58" count="3" type="stmt"/>
+        <line num="66" count="2" type="stmt"/>
       </file>
       <file name="Buddy.js" path="/Users/mandyalford/turing/mod4/projects/runbelievable-fe/components/Buddy.js">
         <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="31" count="2" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
       </file>
       <file name="Chat.js" path="/Users/mandyalford/turing/mod4/projects/runbelievable-fe/components/Chat.js">
-        <metrics statements="17" coveredstatements="2" conditionals="1" coveredconditionals="0" methods="12" coveredmethods="0"/>
-        <line num="10" count="0" type="stmt"/>
+        <metrics statements="14" coveredstatements="2" conditionals="1" coveredconditionals="0" methods="11" coveredmethods="0"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
         <line num="57" count="0" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
-        <line num="73" count="0" type="stmt"/>
-        <line num="82" count="0" type="stmt"/>
-        <line num="85" count="0" type="stmt"/>
-        <line num="160" count="1" type="stmt"/>
-        <line num="162" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
       </file>
       <file name="CustomButton.js" path="/Users/mandyalford/turing/mod4/projects/runbelievable-fe/components/CustomButton.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -80,13 +82,14 @@
         <line num="16" count="2" type="stmt"/>
       </file>
       <file name="Header.js" path="/Users/mandyalford/turing/mod4/projects/runbelievable-fe/components/Header.js">
-        <metrics statements="6" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="38" count="2" type="stmt"/>
+        <metrics statements="7" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="40" count="3" type="stmt"/>
       </file>
       <file name="Homepage.js" path="/Users/mandyalford/turing/mod4/projects/runbelievable-fe/components/Homepage.js">
         <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
@@ -161,8 +164,8 @@
         <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="10" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
       </file>
     </package>
   </project>
