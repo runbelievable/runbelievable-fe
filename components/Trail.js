@@ -28,13 +28,13 @@ export default class Trail extends Component {
             userId={this.props.route.params.userId}
           />
           <Text style={styles.heading}>Here's a trail you might like!</Text>
-          <Text>Trail Name: {this.state.randomTrail.name}</Text>
+          <Text style={styles.textSpacing}>Trail Name: {this.state.randomTrail.name}</Text>
           <Text>Summary</Text>
-          <Text>{this.state.randomTrail.summary}</Text>
-          <Text>Location: {this.state.randomTrail.location}</Text>
-          <Text>Length: {this.state.randomTrail.length} miles</Text>
+          <Text style={styles.details}>{this.state.randomTrail.summary}</Text>
+          <Text style={styles.textSpacing}>Location: {this.state.randomTrail.location}</Text>
+          <Text style={styles.textSpacing}>Length: {this.state.randomTrail.length} miles</Text>
           <Text
-          style={{color: 'blue'}}
+          style={{color: 'blue', paddingHorizontal: 30, marginBottom: 10}}
           onPress={() => Linking.openURL(this.state.randomTrail.url)}>
           {this.state.randomTrail.url}
           </Text>
@@ -59,5 +59,12 @@ const styles = StyleSheet.create({
   },
   activityIndicator: {
     marginTop: 50
+  },
+  details: {
+    paddingHorizontal: 30,
+    marginBottom: 10
+  },
+  textSpacing: {
+    marginBottom: 10
   }
 })

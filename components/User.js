@@ -14,10 +14,13 @@ export default function User ({navigation, route}){
           userId={route.params.userInfo.id}
           navigation={navigation}
           />
-          <Text>{route.params.userInfo.attributes.first_name}</Text>
-            <Text>Favorite Routes</Text>
-          <Text>Pace: {route.params.userInfo.attributes.estimated_mile_pace}/ min</Text>
-          <Text>Location: {route.params.userInfo.attributes.location}</Text>
+          <Text style={styles.username}>{route.params.userInfo.attributes.username}</Text>
+          <Text style={styles.details}>{route.params.userInfo.attributes.first_name}</Text>
+          <Text style={styles.details}>Age: {route.params.userInfo.attributes.age}</Text>
+          <Text style={styles.details}>Gender: {route.params.userInfo.attributes.gender}</Text>
+          <Text style={styles.details}>Pace: {route.params.userInfo.attributes.estimated_mile_pace}/ min</Text>
+          <Text style={styles.details}>Run Distance: {route.params.userInfo.attributes.max_run_distance}/ min</Text>
+          <Text style={styles.details}>Location: {route.params.userInfo.attributes.location}</Text>
           <Button
           title='Find Buddies'
           onPress={() => {navigation.navigate('Buddies', {
@@ -36,4 +39,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 40,
   },
+  username: {
+    fontSize: 30,
+    color: 'darkorange',
+    marginBottom: 10,
+  },
+  details: {
+    marginBottom: 10,
+  }
 })
