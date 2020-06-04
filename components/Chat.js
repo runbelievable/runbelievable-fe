@@ -4,7 +4,8 @@ import SearchButton from './SearchButton';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Header from './Header';
-import { GiftedChat } from 'react-native-gifted-chat'
+import { GiftedChat } from 'react-native-gifted-chat';
+import { getMessageConversation, postMessageToConversation } from '../apiCalls';
 
 export default class Chat extends Component {
   state = {
@@ -12,38 +13,26 @@ export default class Chat extends Component {
       currentMessage: '',
     }
 
-    componentDidMount() {
-      fetch(`https://run-be.herokuapp.com/api/v1/users/${this.props.route.params.userId}/message-conversations/${this.props.route.params.username}`)
-        .then(response => response.json())
-        .then(data => data.data.map(message => {
-          return message = {
-            key: message.id,
-            _id: message.id,
-            text: message.attributes.body,
-            createdAt: message.attributes.created_at,
-            user: {
-              _id: message.attributes.sent_messageable_id
-            }
+  componentDidMount() {
+    getMessageConversation(this.props.route.params.userId, this.props.route.params.username)
+      .then(response => response.json())
+      .then(data => data.data.map(message => {
+        return message = {
+          key: message.id,
+          _id: message.id,
+          text: message.attributes.body,
+          createdAt: message.attributes.created_at,
+          user: {
+            _id: message.attributes.sent_messageable_id
           }
-        }))
-        .then(data => this.setState({messages: data.reverse()}))
-
+        }
+      }))
+      .then(data => this.setState({messages: data.reverse()}))
     }
 
     onSend(messages = []) {
-      fetch(`https://run-be.herokuapp.com/api/v1/users/${this.props.route.params.userId}/messages`, {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify(
-          {
-            'topic': 'still test topic',
-            'body': this.state.currentMessage,
-            'username': this.props.route.params.username,
-          }
-        )
-      })
+      postMessageToConversation(this.props.route.params.userId, this.state.currentMessage, this.props.route.params.username)
+      .then(response => console.log(response.json()))
 
       this.setState(previousState => ({
         messages: GiftedChat.append(previousState.messages, messages)
