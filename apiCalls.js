@@ -14,7 +14,6 @@ export const validateUser = (name, pword) => {
   })
 }
 
-
 export const getSingleUser = (id) => {
   return fetch(`https://run-be.herokuapp.com/api/v1/users/${id}`)
     .then(response => response.json())
@@ -27,4 +26,25 @@ export const findRandomTrail = (id) => {
 
 export const logOutUser = () => {
   return fetch('https://run-be.herokuapp.com/api/v1/logout')
+}
+
+export const getMessageConversation = (userId, buddyUsername) => {
+  return fetch(`https://run-be.herokuapp.com/api/v1/users/${userId}/message-conversations/${buddyUsername}`)
+}
+
+export const postMessageToConversation = (userId, currentMessage, buddyUsername) => {
+  return fetch(`https://run-be.herokuapp.com/api/v1/users/${userId}/messages`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(
+      {
+        'topic': 'still test topic',
+        'body': currentMessage,
+        'username': buddyUsername,
+      }
+    )
+  })
+  .then(response => console.log(response))
 }

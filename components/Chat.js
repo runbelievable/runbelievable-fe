@@ -4,16 +4,8 @@ import SearchButton from './SearchButton';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Header from './Header';
-import { GiftedChat } from 'react-native-gifted-chat'
-
-function Message() {
-    return(
-      <View style={styles.sentMessage}>
-      <Text> Test
-      </Text>
-      </View>
-    )
-}
+import { GiftedChat } from 'react-native-gifted-chat';
+import { getMessageConversation, postMessageToConversation } from '../apiCalls';
 
 export default class Chat extends Component {
   state = {
@@ -21,40 +13,27 @@ export default class Chat extends Component {
       currentMessage: '',
     }
 
-    componentDidMount() {
-      fetch(`https://run-be.herokuapp.com/api/v1/users/${this.props.route.params.userId}/message-conversations/${this.props.route.params.username}`)
-        .then(response => response.json())
-        .then(data => data.data.map(message => {
-          return message = {
-            key: message.id,
-            _id: message.id,
-            text: message.attributes.body,
-            createdAt: message.attributes.created_at,
-            user: {
-              _id: message.attributes.sent_messageable_id
-            }
+  componentDidMount() {
+    getMessageConversation(this.props.route.params.userId, this.props.route.params.username)
+      .then(response => response.json())
+      .then(data => data.data.map(message => {
+        return message = {
+          key: message.id,
+          _id: message.id,
+          text: message.attributes.body,
+          createdAt: message.attributes.created_at,
+          user: {
+            _id: message.attributes.sent_messageable_id
           }
-        }))
-        .then(data => this.setState({messages: data}))
-
+        }
+      }))
+      .then(data => this.setState({messages: data.reverse()}))
     }
 
     onSend(messages = []) {
-      fetch(`https://run-be.herokuapp.com/api/v1/users/${this.props.route.params.userId}/messages`, {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify(
-          {
-            'topic': 'still test topic',
-            'body': this.state.currentMessage,
-            'username': this.props.route.params.username,
-          }
-        )
-      })
-      .then(response => console.log(response))
-      console.log(messages)
+      postMessageToConversation(this.props.route.params.userId, this.state.currentMessage, this.props.route.params.username)
+      .then(response => console.log(response.json()))
+
       this.setState(previousState => ({
         messages: GiftedChat.append(previousState.messages, messages)
       }))
@@ -63,10 +42,12 @@ export default class Chat extends Component {
     render() {
       return (
         <View style={{flex: 1}}>
+          <View style={styles.header}>
           <Header
           userId={this.props.route.params.userId}
           navigation={this.props.navigation}
           />
+          </View>
           <GiftedChat
             text={this.state.currentMessage}
             onInputTextChanged={inputText => {
@@ -98,18 +79,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingTop: 30,
   },
-  message: {
-    fontSize: 22,
-    paddingHorizontal: 10,
-    paddingVertical: 10,
-    textAlign: 'center',
-  },
-  messageInput: {
-    alignSelf: 'center',
-    display: 'flex',
-    marginBottom: 20,
-  },
-  messageArea: {
-
+  header: {
+    alignItems: 'center'
   },
 })
