@@ -34,6 +34,10 @@ Runbelievable is Runbelievable is an iOS app created with React Native on the fr
 
 [video](https://www.youtube.com/watch?v=AtJTyf82qa8&feature=youtu.be)
 
+## Project Board
+
+[Project Board](https://github.com/orgs/runbelievable/projects/1)
+
 ## Contributors
 
 * [Mandy Alford](https://github.com/MandyAlford)
